@@ -1,0 +1,27 @@
+<!-- 辅助空白 -->
+<view class="quick-goods" style="padding-left:{{itemStyle.paddingLeft}}px;background-color:{{itemStyle.background}};padding-right:{{itemStyle.paddingLeft}}px;padding-top:{{itemStyle.paddingTop}}px;padding-bottom:{{itemStyle.paddingTop}}px;">
+      <view class="quick-goods-title">
+            <view class="quick-goods-title-main">{{params.title}}</view>
+            <view class="quick-goods-title-sub">{{params.sub_title}}</view>
+      </view>
+      <view class="quick-goods-nav">
+            <view ontap="changeQuick" data-selected="{{index}}" class="quick-goods-nav-item {{selectedIndex==index?'current':''}}" wx:for="{{ dataList }}" wx:for-item="dataItem"  wx:key="this">
+                  <view>{{dataItem.time}}</view>
+                  <view>{{dataItem.title}}</view>
+            </view>
+      </view>
+      <view class="quick-goods-goods-container">
+            <view class="quick-goods-item" ontap="goodsDetail" data-id="{{item.goods_id}}" wx:key="index"  wx:for="{{ dataList[selectedIndex].list.data }}"  wx:key="this">
+                  <view class="goods-item-img"><image src="{{item.goods_image}}"></image></view>
+                  <view class="goods-item-title">{{item.goods_name}}</view>
+                  <view class="goods-item-price">
+                        <view class="price">￥{{item.goods_sku.goods_price}}</view>
+                        <view class="old-price">￥{{item.goods_sku.line_price}}</view>
+                  </view>
+                  <view class="no-stock" wx:if="{{item.goods_sku.stock_num==0}}">
+                        <view class="no-stock-bg"></view>
+                        <image src="/images/nostock.png"></image>
+                  </view>
+            </view>                                    
+      </view>
+</view>

@@ -1,0 +1,6 @@
+{
+      "navigationBarTitleText": "一键核销",
+      "usingComponents": {
+            "zan-popup": "/components/popup/index"
+      }
+}

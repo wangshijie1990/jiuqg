@@ -1,0 +1,19 @@
+/* common.wxss */
+/* @import "/utils/common.wxss"; */
+
+/* 分享 */
+
+.diy-share {
+  position: fixed;
+  z-index: 999;
+}
+
+.diy-share .share-icon {
+  padding: 10rpx;
+}
+
+.diy-share .share-icon .image {
+  display: block;
+  width: 140rpx;
+  height: 70rpx;
+}

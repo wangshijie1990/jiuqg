@@ -1,0 +1,57 @@
+/* pages/order/success.wxss */
+
+page {
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+}
+
+
+.success-images-container {
+      width: 100%;
+      height: 250rpx;
+      padding-top: 60rpx;
+}
+
+.success-images-container image {
+      width: 280rpx;
+      height: 250rpx;
+      margin: auto;
+      display: block;
+}
+.success-text{
+      color:#00A73D;
+      height: 120rpx;
+      line-height: 120rpx;
+      text-align: center;
+      font-size:30rpx;
+}
+.success-share{
+      color:#666;
+      height: 70rpx;
+      line-height: 70rpx;
+      text-align:center;
+      font-size:25rpx;
+}
+.success-btn{
+      padding-top:50rpx;
+}
+.success-btn button{
+      width:300rpx;
+      height: 60rpx;
+      display: block;
+      color:#00A73D;
+      line-height: 60rpx;
+      font-size:28rpx;
+      text-align:center;
+      background-color:#fff;
+      border:1rpx solid #00A73D;
+      border-radius: 30rpx;
+}
+.go{
+      text-align: center;
+      font-size:25rpx;
+      color:#666;
+      line-height: 80rpx;
+      height: 80rpx;
+}

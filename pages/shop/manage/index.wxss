@@ -1,0 +1,227 @@
+/* 门店信息 */
+.container{
+      padding-bottom:60rpx;
+}
+.user {
+      position: relative;
+      margin-bottom: 20rpx;
+}
+
+.user-header {
+      display: flex;
+      padding-top: 1px;
+      width: 100%;
+      height: 310rpx;
+      color:#fff;
+      background-size:100% 100%;
+}
+
+.user-header .user-header-cont {
+      margin: auto;
+      margin-bottom: 135rpx;
+      text-align: center;
+}
+.user-header .user-header-cont .user-header-avatar {
+      width:120rpx;
+      height: 120rpx;
+      margin:auto;
+      margin-bottom:10rpx;
+}
+.user-header .user-header-cont .user-header-avatar image{
+      width: 120rpx;
+      height: 120rpx;
+      display: block;
+      margin: auto;
+      border-radius: 60rpx;
+      border:2rpx solid #fff;
+      background-color:#fff;
+}
+.user-header .user-header-cont-name {
+      font-size: 32rpx;
+}
+.user-header .shop-item__title{
+      font-size:32rpx;
+      color:#fff;
+      line-height: 60rpx;
+      height: 60rpx;
+}
+.user-header .shop-item__address{
+      font-size:23rpx;
+      color:#fff;
+}
+
+
+
+
+
+/* 订单导航栏 */
+
+.order-navbar {
+      
+      margin: auto;
+      padding: 15rpx 0;
+      width: 95%;
+      box-shadow: 0 1rpx 5rpx 0px rgba(0, 0, 0, 0.05);
+      font-size: 30rpx;
+      border-top: 1rpx solid #eee;
+      border-radius: 5rpx;
+      background: #fff;
+      margin-bottom:20rpx;
+      margin-top:20rpx;
+}
+
+.order-navbar-header {
+      margin: auto;
+      padding-bottom: 10rpx;
+      width: 91%;
+      height: 70rpx;
+      border-bottom: 1px solid #eee;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.order-navbar-footer {
+      width: 100%;
+      padding: 10rpx 0px;
+}
+
+.order-navbar-footer .order-navbar-item .order-navbar__icon {
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      padding: 10rpx 0;
+      color: #14a84a;
+      font-size: 36rpx;
+}
+
+.order-navbar-footer .order-navbar-item .order-navbar__name {
+      display: block;
+      font-size: 24rpx;
+      color: #666;
+      text-align: center;
+      margin-right: 10rpx;
+}
+
+.order-navbar-footer .order-navbar-item .order-badge {
+      position: absolute;
+      top: 0;
+      right: 55rpx;
+      font-size: 22rpx;
+      background: #ff495e;
+      text-align: center;
+      line-height: 28rpx;
+      color: #fff;
+      border-radius: 100%;
+      min-height: 30rpx;
+      min-width: 30rpx;
+      padding: 1rpx;
+}
+
+/* 订单信息 */
+
+.asset-title {
+      background: #fff;
+      border-bottom: 1rpx solid #eee;
+      padding: 26rpx 0;
+      text-indent: 30rpx;
+      color:#666;
+      position: relative;
+      width:95%;
+      margin: auto;
+      margin-top:20rpx;
+}
+.asset-title-right{
+      position: absolute;
+      right:0rpx;
+      top:26rpx;
+      width: 160rpx;
+}
+.asset-bottom-title {
+      background: #fff;
+      border-top: 1rpx solid #eee;
+      padding: 26rpx 0;
+      text-indent: 30rpx;
+      color:#666;
+      width:95%;
+      margin: auto;
+}
+.asset-bottom-title text{
+      color:#f00;
+}
+.my-asset {
+      background: #fff;
+      /* height: 70rpx; */
+      padding: 26rpx 0;
+      width:95%;
+      margin: auto;
+}
+
+.my-asset .asset-right {
+      width: 210rpx;
+      border-left: 1rpx solid #eee;
+}
+
+.asset-right_item {
+      text-align: center;
+      color: #666;
+}
+
+.asset-right_item .item-icon text {
+      font-size: 36rpx;
+}
+
+.asset-right_item .item-name {
+      margin-top: 10rpx;
+}
+
+.asset-right_item .item-name text {
+      font-size: 25rpx;
+}
+
+.asset-left_item {
+      text-align: center;
+      color: #666;
+      padding: 0 60rpx;
+}
+
+.asset-left_item .item-value text {
+      font-size: 32rpx;
+      color: red;
+}
+
+.asset-left_item .item-name {
+      margin-top: 6rpx;
+}
+
+.asset-left_item .item-name text {
+      font-size: 25rpx;
+}
+.no-shop {
+  padding-top: 150rpx;
+}
+
+.no-icon image {
+  width: 420rpx;
+  height: 240rpx;
+}
+
+.no-msg {
+  padding: 86rpx 0;
+}
+
+.form-submit button {
+  font-size: 30rpx;
+  background: #786cff;
+  border: 1rpx solid #786cff;
+  color: white;
+  border-radius: 50rpx;
+  padding: 0 80rpx;
+  min-width: 470rpx;
+  box-sizing: border-box;
+}
+
+.form-submit button[disabled] {
+  background: #8e84fc;
+  border-color: #8e84fc;
+  color: white;
+}

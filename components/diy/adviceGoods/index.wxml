@@ -1,0 +1,48 @@
+<view class="advice-goods" style="padding-left:{{itemStyle.paddingLeft}}px;background-color:{{itemStyle.background}};padding-right:{{itemStyle.paddingLeft}}px;padding-top:{{itemStyle.paddingTop}}px;padding-bottom:{{itemStyle.paddingTop}}px;">
+      <view class="advice-goods-title">
+            <view class="advice-goods-title-main">{{params.title}}</view>
+            <view class="advice-goods-sub-title">{{params.sub_title}}</view>
+      </view>
+      <view class="advice-goods-nav">
+            <view ontap="changeAdvice" data-selected="{{index}}" class="advice-goods-nav-item {{selectedIndex==index?'current':''}}"  wx:for="{{dataList}}" wx:key="this">{{item.tag_text}}
+                  <view class="current" wx:if="{{selectedIndex==index}}"></view>
+            </view>
+      </view>
+      <view class="advice-goods-container">
+            <view class="goods-item" wx:for="{{dataList[selectedIndex].list.data}}" wx:key="this">
+                  <view class="goods-item-left"  ontap="goodsDetail" data-id="{{item.goods_id}}"  >
+                        <view class="goods-item-img">
+                              <image src="{{item.goods_image}}"></image>
+                        </view>
+                  </view>
+                  <view class="goods-item-right">
+                        <view class="goods-item-title"  ontap="goodsDetail" data-id="{{item.goods_id}}">{{item.goods_name}}</view>
+                        
+                        <view class="dis-flex"  ontap="goodsDetail" data-id="{{item.goods_id}}">
+                        
+                              <view class="goods-item-time">
+                                    <view class="goods-item-buytime">预售时间：{{dataList[selectedIndex].buy_time}}</view>
+                                    <view class="goods-item-gettime">提货时间：{{dataList[selectedIndex].get_time}}</view>
+                              </view>
+                              <view class="goods-item-sale">
+                                    <view class="sale-num">
+                                          <view>已售{{item.goods_sales+item.goods_sku.goods_sales}}份</view>
+                                    </view>
+                                    <view class="sale-remain">
+                                          <view>剩余{{item.goods_sku.stock_num}}份</view>
+                                    </view>
+                              </view>
+                        </view>
+                        <view class="goods-item-price">
+                              <view class="current-price">￥{{item.goods_sku.goods_price}}</view>
+                              <view class="old-price">￥{{item.goods_sku.line_price}}</view>
+                              <view class="buynow" wx:if="{{item.goods_sku.stock_num>0}}" bindtap="addCart" data-id="{{item.goods_id}}" data-sku_id="{{item.goods_sku.spec_sku_id}}">加入购物车</view>
+                        </view>
+                  </view>
+                  <view class="no-stock" wx:if="{{item.goods_sku.stock_num==0}}">
+                        <view class="no-stock-bg"></view>
+                        <image src="/images/nostock.png"></image>
+                  </view>
+            </view>
+      </view>
+</view>

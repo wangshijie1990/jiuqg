@@ -1,0 +1,7 @@
+<view class="container p-bottom">
+      <view class="success-images-container"><image src="https://shop.yewudaotech.com/temp/10001/paysuccess.png"></image></view>
+      <view class="success-text">支付成功</view>
+      <view class="success-share">快和小伙伴分享你的订单</view>
+      <view class="success-btn"><button open-type="share">分享订单</button></view>
+      <view class="go" bindtap="goHome">继续逛逛<text class="iconfont icon-jiantou"></text></view>
+</view>

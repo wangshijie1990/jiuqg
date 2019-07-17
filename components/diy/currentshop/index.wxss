@@ -1,0 +1,72 @@
+/* common.wxss */
+
+/* @import "/utils/common.wxss"; */
+
+/* 当前门店 */
+
+.shop-item {
+      padding: 0rpx;
+      min-height: 120rpx;
+      font-size: 26rpx;
+      line-height: 1.5;
+      box-sizing: border-box;
+}
+
+.shop-item__logo {
+      width: 100rpx;
+      height: 100rpx;
+      margin-right: 20rpx;
+}
+
+.shop-item__logo .image {
+      display: block;
+      width: 80rpx;
+      height: 80rpx;
+      margin:auto;
+      margin-top:10rpx;
+      /*border: 1px solid rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.1); */
+}
+
+.shop-item__title {
+      font-size: 28rpx;
+      color: #fd4a5f;
+      margin-bottom: 10rpx;
+}
+
+.shop-item__address, .shop-item__phone {
+      color: #919396;
+}
+
+.shop-item__distance {
+      margin-top: 10rpx;
+      color: #c1c1c1;
+      height: 40rpx;
+}
+
+.shop-item__distance .iconfont {
+      color: #81838e;
+      margin-right: 6rpx;
+}
+
+.shop-switch {
+      width: 160rpx;
+}
+
+.shop-switch-location {
+      width: 160rpx;
+      overflow: hidden;
+}
+
+.shop-switch-location image {
+      display: block;
+      width: 30rpx;
+      height: 45rpx;
+      margin: auto;
+}
+
+.shop-switch-text {
+      color: #666;
+      font-size: 23rpx;
+      text-align: center;
+}

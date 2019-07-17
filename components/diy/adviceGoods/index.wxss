@@ -1,0 +1,194 @@
+.advice-goods-title {
+      display: flex;
+      height: 60rpx;
+      line-height: 60rpx;
+
+}
+
+.advice-goods-title-main {
+      width: 160rpx;
+      font-size: 32rpx;
+}
+
+.advice-goods-sub-title {
+      flex: 1;
+      font-size: 25rpx;
+      color: #666;
+}
+
+.advice-goods-nav {
+      white-space: nowrap;
+      height: 80rpx;
+      line-height: 80rpx;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      background-color: #fff;
+}
+
+.advice-goods-nav::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      color: transparent;
+}
+
+.advice-goods-nav-item {
+      display: inline-block;
+      font-size: 28rpx;
+      line-height: 80rpx;
+      padding-left: 30rpx;
+      padding-right: 30rpx;
+      text-align: center;
+      height: 80rpx;
+      position: relative;
+      width:120rpx;
+}
+.advice-goods-nav-item.current{
+      font-size:32rpx;
+}
+.advice-goods-nav-item.current .current{
+      width:60rpx;
+      height: 7rpx;
+      background-color:#009933;
+      position: absolute;
+      left:60rpx;
+      bottom:8rpx;
+      border-radius: 5rpx;
+      border:1rpx solid #009933;
+}
+.advice-goods-container {
+      padding-top: 10rpx;
+}
+
+.advice-goods-container .goods-item {
+      margin-bottom:15rpx;
+      padding:15rpx;
+      background-color: #fff;
+      position: relative;
+}
+.advice-goods-container .goods-item .no-stock{
+      position: absolute;
+      z-index: 99;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+}
+.advice-goods-container .goods-item .no-stock .no-stock-bg{
+      width:100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.2;
+}
+.advice-goods-container .goods-item .no-stock image{
+      position: absolute;
+      top:50rpx;
+      left:35%;
+      width:180rpx;
+      height: 160rpx;
+}
+.advice-goods-container .goods-item-left {
+      width: 100%;
+}
+
+.advice-goods-container  .goods-item-img {
+      width: 100%;
+      height: 260rpx;
+      overflow: hidden;
+}
+
+.advice-goods-container  .goods-item-img image {
+      width: 100%;
+      border-top-left-radius: 20rpx;
+      border-top-right-radius: 20rpx;
+}
+
+
+
+.advice-goods-container .goods-item-title {
+      height: 60rpx;
+      line-height: 50rpx;
+      overflow: hidden;
+      font-size: 28rpx;
+}
+
+.advice-goods-container .goods-item-sale {
+      display: flex;
+      font-size: 25rpx;
+      height: 60rpx;
+      text-align: center;
+      width:280rpx;
+}
+.advice-goods-container .goods-item-time{
+      flex:1;
+}
+.advice-goods-container .goods-item-sale .sale-num {
+      flex: 1;
+}
+
+.advice-goods-container .goods-item-sale .sale-num view {
+      border: 1px solid #000;
+      width: 120rpx;
+      color: #000;
+      border-radius: 10px;
+      margin-top:20rpx;     
+}
+
+.advice-goods-container .goods-item-sale .sale-remain {
+      flex: 1;
+}
+
+.advice-goods-container .goods-item-sale .sale-remain view {
+      border: 1px solid #093;
+      background-color: #cff;
+      width: 140rpx;
+      color: #000;
+      border-radius: 10px;
+      margin-top:20rpx;  
+}
+
+.advice-goods-container .goods-item-buytime {
+      color: #f96;
+      font-size: 25rpx;
+      height: 40rpx;
+}
+
+.advice-goods-container .goods-item-gettime {
+      color: #f96;
+      font-size: 25rpx;
+      height: 40rpx;
+}
+
+.advice-goods-container .goods-item-price {
+      display: flex;
+}
+
+.advice-goods-container .goods-item-price .current-price {
+      padding-right:20rpx;
+      text-align: left;
+      color:#009933;
+      line-height: 60rpx;
+}
+
+.advice-goods-container .goods-item-price .old-price {
+      flex: 1;
+      text-align: left;
+      color:#666;
+	font-size: 24rpx;
+	text-decoration: line-through;
+      line-height: 60rpx;
+}
+
+.advice-goods-container .goods-item-price .buynow {
+      background-color: #093;
+      color: #fff;
+      border-radius: 20rpx;
+      height:60rpx;
+      line-height: 60rpx;
+      padding-left: 10rpx;
+      padding-right: 10rpx;
+      font-size: 26rpx;
+      box-shadow: 3rpx 3rpx 4rpx #093;
+      width:160rpx;
+      text-align: center;
+      
+}

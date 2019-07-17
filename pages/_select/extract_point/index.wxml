@@ -1,0 +1,81 @@
+<view class="container b-f">
+      <view class="current-location">
+            <view class="location-image">
+                  <image src="/images/location.png"></image>
+            </view>
+            <view class="location-text">当前位置：{{currentLocation}}</view>
+      </view>
+      <view class="choose-location">
+            <view class="choose-location-button" bindtap="chooseLocation">选择位置</view>
+      </view>
+      <view class="shop-list">
+            <view class="search-title"  wx:if="{{currentShop}}">当前社区</view>
+            <view class="shop-item__content dis-flex"  wx:if="{{currentShop}}" style="background-color:#fff;margin-bottom:20rpx;padding-bottom:20rpx;">
+                  <view class="shop-item-detail dis-flex" style="padding-top:30rpx;">
+                        <view class="shop-item__logo">
+                              <image src="{{currentShop.logo.file_path}}"></image>
+                        </view>
+                        <view style="flex:1;">
+                              <view class="shop-item__title">
+                                    <text>{{ currentShop.shop_name }}</text>
+                              </view>
+                              <view class="shop-item__address">
+                                    <text>地址：{{ currentShop.region.province }}{{ currentShop.region.city }}{{ currentShop.region.region }}{{ currentShop.address }}</text>
+                              </view>
+                        </view>
+                  </view>
+                  <view class="shop-item__distance">
+                        <block>
+                              <text class="iconfont icon-dingwei"></text>
+                              <text class="f-24">{{ currentShop.distance_unit }}</text>
+                        </block>
+                  </view>
+            </view>
+            <view class="dis-flex">
+                  <view class="search-title">附近团长</view>
+                  <view class="search-container" style="width:{{width}}rpx;padding-top:10rpx;">
+                        <text wx:if="{{searchIcon}}" class="search-icon iconfont icon-sousuo"></text>
+                        <input placeholder="{{holderKeyword}}" bindfocus="focus" bindblur="blur" bindconfirm="search" />
+                  </view>
+            </view>
+            <view wx:for="{{ shopList }}" wx:key="this" catchtap="onSelectedShop" data-id="{{ item.shop_id }}" class="shop-item dis-flex flex-y-center">
+                  <view class="shop-item__content dis-flex">
+                        <view class="shop-item-detail dis-flex">
+                              <view class="shop-item__logo">
+                                    <image src="{{item.logo.file_path}}"></image>
+                              </view>
+                              <view style="flex:1;">
+                                    <view class="shop-item__title">
+                                          <text>{{ item.shop_name }}</text>
+                                    </view>
+                                    <view class="shop-item__address">
+                                          <text>地址：{{ item.region.region }}{{ item.address }}</text>
+                                    </view>
+                              </view>
+                        </view>
+                        <view class="shop-item__distance">
+                              <block>
+                                    <text class="iconfont icon-dingwei"></text>
+                                    <text class="f-24">{{ item.distance_unit }}</text>
+                              </block>
+                        </view>
+                  </view>
+                  <!-- 选中状态 -->
+                  <!--<view wx:if="{{ item.shop_id == selectedId }}" class="shop-item__right">
+                        <text class="iconfont icon-iconfontduihaocopy"></text>
+                  </view>-->
+            </view>
+      </view>
+      <!-- 无数据提供的页面 -->
+      <view wx:if="{{ !isLoading && !shopList.length }}">
+            <view class="yoshop-notcont">
+                  <text class="iconfont icon-wushuju"></text>
+                  <text class="cont">亲，暂无自提门店哦</text>
+            </view>
+      </view>
+      <!-- 定位按钮 -->
+      <view wx:if="{{ !isAuthor }}" class="widget-location dis-flex flex-x-center flex-y-center" catchtap="onAuthorize">
+            <text class="iconfont icon-locate"></text>
+      </view>
+</view>
+<zan-toptips id="zan-toptips" content="{{ content }}" />

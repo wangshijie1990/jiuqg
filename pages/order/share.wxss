@@ -1,0 +1,122 @@
+.shop {
+      background-color: #fff;
+      padding: 20rpx;
+}
+
+.shop-logo {
+      width: 100rpx;
+      height: 100rpx;
+}
+
+.shop-logo image {
+      width: 100rpx;
+      height: 100rpx;
+}
+
+.shop-info {
+      flex: 1;
+      font-size: 30rpx;
+      padding-left:30rpx;
+}
+
+.shop-info .shop-name {
+      font-size: 30rpx;
+      line-height: 60rpx;
+}
+
+.shop-info .shop-linkman {
+      font-size: 25rpx;
+      line-height: 40rpx;
+      color: #666;
+}
+.location{
+      padding: 20rpx;
+      background-color: #fff;
+      border-top:1px solid #f7f7f7;
+}
+.location-image{
+      width:40rpx;
+      height: 50rpx;
+}
+.location-image image{
+      width:18rpx;
+      height: 30rpx;
+}
+.locatino-address{
+      font-size:27rpx;
+}
+.user{
+      
+      margin-top:10rpx;
+      background-color: #fff;
+      text-align: center;
+}
+.user .user-title{
+      font-size:28rpx;
+      color:#000;
+      border-bottom:1px solid #f7f7f7;
+      height: 60rpx;
+      line-height: 60rpx;
+      
+}
+.user .user-image{
+      padding-top: 20rpx;
+      padding-bottom: 20rpx;
+}
+.user .user-image image{
+      width:100rpx;
+      height: 100rpx;
+      border-radius: 50rpx;
+      display: block;
+      margin:auto;
+}
+.user .user-time{
+      font-size:27rpx;
+      color:#666;
+      padding-bottom: 20rpx;
+}
+.buy-list{
+      margin-top:20rpx;
+      background-color:#fff;
+
+}
+.buy-list .buy-list-title{
+      font-size:27rpx;
+      text-align: center;
+      height: 60rpx;
+      line-height: 60rpx;
+      border-bottom:1px solid #f7f7f7;
+}
+.buy-list-image image{
+      display: inline-block;
+      width:70rpx;
+      height: 70rpx;
+      border-radius: 40rpx;
+      margin-left:20rpx;
+      margin-top:10rpx;
+}
+.go{
+      margin-top:10rpx;
+      background-color:#fff;
+      padding-top:20rpx;
+      padding-bottom: 20rpx;
+}
+.go button{
+      background-color: #00a73d;
+      width:90%;
+      height: 70rpx;
+      margin:auto;
+      display: block;
+      line-height: 70rpx;
+      color:#fff;
+      font-size:28rpx;
+}
+.goods-list-title{
+      background-color:#fff;
+      font-size:28rpx;
+      text-align: center;
+      height: 60rpx;
+      line-height: 60rpx;
+      margin-top:20rpx;
+      border-bottom: 1px solid #f7f7f7;
+}

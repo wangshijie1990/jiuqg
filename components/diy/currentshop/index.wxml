@@ -1,0 +1,27 @@
+<!-- 辅助空白 -->
+<view class="diy-shop" wx:if="{{selectedShopId > 0}}" style="padding-left:{{itemStyle.paddingLeft}}px;background-color:{{itemStyle.background}};padding-right:{{itemStyle.paddingLeft}}px;padding-top:{{itemStyle.paddingTop}}px;padding-bottom:{{itemStyle.paddingTop}}px;">
+      <view class="shop-item" style="background-color:{{itemStyle.contentBackground}};">
+            <form bindsubmit="_onTargetSwitch" report-submit="true">
+                  <button formType="submit" class="btn-normal dis-flex flex-y-center" data-id="{{ shop.shop_id }}" data-source="{{params.source}}" data-switch="{{params.switch}}">
+                        <view class="shop-item__logo">
+                              <image class="image" src="{{ shop.logo_image }}"></image>
+                        </view>
+                        <view class="shop-item__content flex-box">
+                              <view class="shop-item__title">
+                                    <span>{{ shop.shop_name }}</span>
+                              </view>
+                              <view class="shop-item__address">
+                                    <span>团长地址：{{ shop.region.region }}{{ shop.address }}</span>
+                              </view>
+                              <!--<view class="shop-item__phone">
+                                    <span>团长姓名：{{ shop.linkman }}</span>
+                              </view>-->
+                        </view>
+                        <view class="shop-switch">
+                              <view class="shop-switch-location"><image src="/images/location.png"></image></view>
+                              <view class="shop-switch-text">更换提货点</view>
+                        </view>
+                  </button>
+            </form>
+      </view>
+</view>

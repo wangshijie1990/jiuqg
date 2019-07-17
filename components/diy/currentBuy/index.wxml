@@ -1,0 +1,9 @@
+<!-- 即刻购买 -->
+<view class="diy-current-buy" bindtap="goodsDetail" wx:if="{{dataList.length>0}}" data-id="{{dataList[currentIndex%dataList.length].goods_id}}" bindtransitionend="animationend" animation="{{animationData}}" style="left: {{ itemStyle.left }}%; bottom: {{ itemStyle.bottom }}%;opacity:0;">
+      <view class="current-buy-item">
+            <view class="avatar">
+                  <image class="image" src="{{ dataList[currentIndex%dataList.length].avatar }}"></image>
+            </view>
+            <view class="buycontent">{{ dataList[currentIndex%dataList.length].username }}刚刚购买了{{ dataList[currentIndex%dataList.length].goods_name }}</view>
+      </view>
+</view>

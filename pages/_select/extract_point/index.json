@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择团长",
+    "usingComponents": {
+      "zan-toptips": "../../../components/toptips/index"
+    }
+}

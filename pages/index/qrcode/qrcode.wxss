@@ -1,0 +1,26 @@
+page {
+      background: #fff;
+      
+}
+.qrcode{
+      position: relative;
+}
+.qrcode image {
+      display: block;
+      width: 100%;
+}
+
+.saveQrcode {
+      position: fixed;
+      right: 10rpx;
+      top: 50rpx;
+      background-color: #f00;
+      z-index: 999;
+      color:#fff;
+      font-size:20rpx;
+      width:100rpx;
+      height: 100rpx;
+      border-radius: 50rpx;
+      text-align: center;
+      line-height: 100rpx;
+}

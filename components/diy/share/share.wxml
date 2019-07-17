@@ -1,0 +1,6 @@
+<!-- 在线客服 -->
+<view class="diy-share" bindtap="dayQrcode" style="right: {{ itemStyle.right }}%; bottom: {{ itemStyle.bottom }}%;">
+      <view class="share-icon">
+            <image class="image" src="{{ params.image }}"></image>
+      </view>
+</view>

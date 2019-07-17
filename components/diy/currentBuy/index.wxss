@@ -1,0 +1,35 @@
+/* common.wxss */
+
+/* @import "/utils/common.wxss"; */
+
+/* 即刻购买 */
+
+.diy-current-buy {
+      position: fixed;
+      z-index: 999;
+      width:300rpx;
+      height: 50rpx;
+      font-size:20rpx;
+      overflow: hidden;
+      color:#fff;
+      background: #000;
+      line-height: 50rpx;
+      padding-right:20rpx;
+      border-top-right-radius: 20rpx;
+      border-bottom-right-radius: 20rpx;
+}
+.diy-current-buy .current-buy-item{
+      display: flex;
+}
+.diy-current-buy .current-buy-item .avatar{
+      width:50rpx;
+      height: 50rpx;
+}
+.diy-current-buy .current-buy-item .avatar image{
+      display: block;
+      width:50rpx;
+      height: 50rpx;
+}
+.diy-current-buy .current-buy-item .buycontent{
+      flex:1;
+}

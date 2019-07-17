@@ -1,0 +1,263 @@
+<view class="container" wx:if="{{ shop }}">
+      <!-- 用户信息 -->
+      <view class="user">
+            <view class="user-header" style="background-image: url('{{background}}');">
+                  <view class="user-header-cont">
+                        <view class="user-header-avatar">
+                              <image class="image" src="{{shop.logo.file_path}}"></image>
+                        </view>
+                        <view class="user-header-right">
+                              <view class="shop-item__title">
+                                    <span>{{shop.shop_name}}</span>
+                              </view>
+                              <view class="shop-item__address">
+                                    <span>{{shop.region.province}}{{shop.region.city}}{{shop.region.region}}{{shop.address}}</span>
+                              </view>
+                        </view>
+                  </view>
+            </view>
+      </view>
+      <!-- 财务信息 -->
+      <view class="asset-title m-top20 f-26">我的财务
+            <view class="asset-title-right" ontap="draw">
+                  <text>去提现</text>
+                  <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+            </view>
+      </view>
+      <view class="my-asset dis-flex">
+            <view class="asset-left flex-box dis-flex flex-x-center">
+                  <view class="asset-left_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-value dis-flex flex-x-center">
+                                    <text>{{money.today}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>今日收入</text>
+                              </view>
+                        </button>
+                  </view>
+                  <view class="asset-left_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-value dis-flex flex-x-center">
+                                    <text>{{money.yesterday}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>昨日收入</text>
+                              </view>
+                        </button>
+                  </view>
+            </view>
+            <view class="asset-right">
+                  <view class="asset-right_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-icon dis-flex flex-x-center">
+                                    <text>{{money.total}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>累计收入</text>
+                              </view>
+                        </button>
+                  </view>
+            </view>
+
+      </view>
+      <view class="asset-bottom-title f-26 dis-flex">
+            <view>可提现金额<text>￥{{shop.money}}</text></view>
+            <view>预估冻结金额<text>￥{{shop.freez_money}}</text></view>
+      </view>
+      <!-- 订单导航栏 -->
+      <view class="order-navbar">
+            <form bindsubmit="onTargetOrder" data-type="all" report-submit="true">
+                  <button formType="submit" class="btn-normal">
+                        <view class="order-navbar-header dis-flex">
+                              <text class="f-30">{{words.order.title.value}}</text>
+                              <view class="dis-flex flex-y-center">
+                                    <text class="f-24 col-6">全部订单</text>
+                                    <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+                              </view>
+                        </view>
+                  </button>
+            </form>
+            <view class="order-navbar-footer dis-flex m-top10">
+                  <view class="order-navbar-item flex-box">
+                        <form bindsubmit="onTargetOrder" data-type="all" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <text class="order-navbar__icon iconfont icon-form"></text>
+                                    <text class="order-navbar__name">全部订单</text>
+                              </button>
+                        </form>
+                  </view>
+                  <view class="order-navbar-item flex-box">
+                        <form bindsubmit="onTargetOrder" data-type="payment" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <text class="order-navbar__icon iconfont icon-daifukuan"></text>
+                                    <text class="order-navbar__name">待付款</text>
+                                    <text class="order-badge" wx:if="{{orderCount.payment > 0}}">{{orderCount.payment}}</text>
+                              </button>
+                        </form>
+                  </view>
+                  <view class="order-navbar-item flex-box">
+                        <form bindsubmit="onTargetOrder" data-type="transfer" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <text class="order-navbar__icon iconfont icon-daishouhuo"></text>
+                                    <text class="order-navbar__name">待配送</text>
+                                    <text class="order-badge" wx:if="{{orderCount.received > 0}}">{{orderCount.received}}</text>
+                              </button>
+                        </form>
+                  </view>
+                  <view class="order-navbar-item flex-box">
+                        <form bindsubmit="onTargetOrder" data-type="receive" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <text class="order-navbar__icon iconfont icon-shouhou"></text>
+                                    <text class="order-navbar__name">待提货</text>
+                                    <text class="order-badge" wx:if="{{orderCount.refund > 0}}">{{orderCount.refund}}</text>
+                              </button>
+                        </form>
+                  </view>
+            </view>
+      </view>
+      <!-- 订单信息 -->
+      <view class="my-asset dis-flex">
+            <view class="asset-left flex-box dis-flex flex-x-center">
+                  <view class="asset-left_item">
+                        <form bindsubmit="onTargetWallet" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <view class="item-value dis-flex flex-x-center">
+                                          <text>{{orderCount.today}}</text>
+                                    </view>
+                                    <view class="item-name dis-flex flex-x-center">
+                                          <text>今日订单</text>
+                                    </view>
+                              </button>
+                        </form>
+                  </view>
+                  <view class="asset-left_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-value dis-flex flex-x-center">
+                                    <text>{{orderCount.yesterday}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>昨日订单</text>
+                              </view>
+                        </button>
+                  </view>
+            </view>
+            <view class="asset-right">
+                  <view class="asset-right_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-icon dis-flex flex-x-center">
+                                    <text>{{orderCount.total}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>累计订单</text>
+                              </view>
+                        </button>
+                  </view>
+            </view>
+      </view>
+      <!-- 拼团订单-->
+      <!--<view class="asset-title m-top20 f-26">拼团订单</view>
+      <view class="my-asset dis-flex">
+            <view class="asset-left flex-box dis-flex flex-x-center">
+                  <view class="asset-left_item">
+                        <form bindsubmit="onTargetSharingOrder" data-type="transfer" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <view class="item-value dis-flex flex-x-center">
+                                          <text>{{sharingOrderCount.transfer}}</text>
+                                    </view>
+                                    <view class="item-name dis-flex flex-x-center">
+                                          <text>待配送</text>
+                                    </view>
+                              </button>
+                        </form>
+                  </view>
+                  <view class="asset-left_item">
+                        <form bindsubmit="onTargetSharingOrder" data-type="receive" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <view class="item-value dis-flex flex-x-center">
+                                          <text>{{sharingOrderCount.receive}}</text>
+                                    </view>
+                                    <view class="item-name dis-flex flex-x-center">
+                                          <text>待提货</text>
+                                    </view>
+                              </button>
+                        </form>
+                  </view>
+            </view>
+            <view class="asset-right">
+                  <view class="asset-right_item">
+                        <form bindsubmit="onTargetSharingOrder" data-type="all" report-submit="true">
+                              <button formType="submit" class="btn-normal">
+                                    <view class="item-icon dis-flex flex-x-center">
+                                          <text>{{sharingOrderCount.total}}</text>
+                                    </view>
+                                    <view class="item-name dis-flex flex-x-center">
+                                          <text>全部拼单</text>
+                                    </view>
+                              </button>
+                        </form>
+                  </view>
+            </view>
+
+      </view>-->
+      <!-- 核销信息-->
+      <view class="asset-title m-top20 f-26">核销记录
+            <view class="asset-title-right scan" ontap="scan">
+                  <text>去核销</text>
+                  <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+            </view>
+      </view>
+      <view class="my-asset dis-flex">
+            <view class="asset-left flex-box dis-flex flex-x-center">
+                  <view class="asset-left_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-value dis-flex flex-x-center">
+                                    <text>{{shopOrderCount.today}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>今日核销</text>
+                              </view>
+                        </button>
+                  </view>
+                  <view class="asset-left_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-value dis-flex flex-x-center">
+                                    <text>{{shopOrderCount.yesterday}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>昨日核销</text>
+                              </view>
+                        </button>
+                  </view>
+            </view>
+            <view class="asset-right">
+                  <view class="asset-right_item">
+                        <button formType="submit" class="btn-normal">
+                              <view class="item-icon dis-flex flex-x-center">
+                                    <text>{{shopOrderCount.total}}</text>
+                              </view>
+                              <view class="item-name dis-flex flex-x-center">
+                                    <text>累计核销</text>
+                              </view>
+                        </button>
+                  </view>
+            </view>
+
+      </view>
+      
+
+</view>
+<view class="container b-f" wx:if="{{ !shop}}">
+      <view class="no-shop">
+            <view class="no-icon dis-flex flex-x-center">
+                  <image src="/images/not-dealer.png"></image>
+            </view>
+            <view class="no-msg dis-flex flex-x-center f-30" style="">{{ words.index.words.not_shop.value }}</view>
+            <!-- 立即申请 -->
+            <view class="no-submit form-submit dis-flex flex-x-center">
+                  <form bindsubmit="triggerApply" report-submit="true">
+                        <button formType="submit">{{ words.index.words.apply_now.value }}</button>
+                  </form>
+            </view>
+      </view>
+</view>

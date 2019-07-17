@@ -1,0 +1,6 @@
+<view class="container">
+      <view class="qrcode">
+            <view class="saveQrcode" bindtap="save">保存图片</view>
+            <image mode="widthFix" src="{{ qrcode }}" catchtap="previewImage"></image>
+      </view>
+</view>

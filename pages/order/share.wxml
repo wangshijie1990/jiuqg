@@ -1,0 +1,100 @@
+<view class="container" wx:if="{{order.order_id}}">
+      <view>
+            <view class="dis-flex shop">
+                  <view class="shop-logo">
+                        <image src="{{shop.logo.file_path}}"></image>
+                  </view>
+                  <view class="shop-info">
+                        <view class="shop-name">{{shop.shop_name}}</view>
+                        <view class="shop-linkman"> 团长：{{shop.linkman}}</view>
+                  </view>
+            </view>
+            <view class="dis-flex location">
+                  <view class="location-image"><image src="/images/location.png"></image></view>
+                  <view class="locatino-address">{{shop.region.region}}{{shop.address}}</view>
+            </view>
+            
+            <view class="user">
+                  <view class="user-title">我正在久趣购社区商超抢购</view>
+                  <view class="user-image">
+                        <image src="{{order.user.avatarUrl}}"></image>
+                  </view>
+                  <view class="user-name">{{order.nickName}}</view>
+                  <view class="user-time">{{order.create_time}}下单成功</view>
+            </view>
+
+
+            <!-- 标题：商品列表 -->
+            <view class="goods-list-title">
+                 商品详情
+            </view>
+
+
+            <view class="padding-box b-f">
+                  <view catchtap="onTargetGoods" class="flow-shopList dis-flex b-f" data-id="{{item.goods_id}}" wx:for="{{order.goods}}" wx:key="this">
+                        <view class="flow-list-left">
+                              <image mode="scaleToFill" src="{{item.image.file_path}}"></image>
+                        </view>
+                        <view class="flow-list-right flex-box">
+                              <!-- 商品名称 -->
+                              <text class="f-30 col-3 twolist-hidden">{{item.goods_name}}</text>
+                              <!-- 商品sku信息 -->
+                              <text class="f-24 col-7">{{item.goods_attr}}</text>
+                              <!-- 商品数量和单价 -->
+                              <view class="flow-list-cont dis-flex flex-x-between flex-y-center">
+                                    <text style="color:#01a63d;" class="flow-cont {{ item.is_user_grade ? 'price-delete' : '' }}">￥{{item.goods_price}}</text>
+                                    <text class="small">数量：{{item.total_num}}份</text>
+                              </view>
+                              <!-- 会员折扣价 -->
+                              <view wx:if="{{ item.is_user_grade }}" class="grade-price">
+                                    <text style="color:#01a63d;">会员折扣价：￥{{ item.grade_goods_price }}</text>
+                              </view>
+                              
+                        </view>
+                  </view>
+            </view>
+
+            
+
+
+
+            <!-- 订单金额 -->
+            <view class="flow-all-money b-f padding-box m-top20">
+                  
+                  <view class="dis-flex flow-all-list-cont">
+                        <text class="flex-five col-7">商品金额：</text>
+                        <text class="flex-five col-m t-r">￥{{order.total_price}}</text>
+                  </view>
+                  
+                  <view class="dis-flex flow-all-list-cont">
+                        <text class="flex-five col-7">配送费用：</text>
+                        <text class="flex-five col-m t-r">+￥{{order.express_price}}</text>
+                  </view>
+                  
+                  <view class="dis-flex flow-all-list-cont">
+                        <text class="flex-five col-7">实付金额：</text>
+                        <text class="flex-five col-m t-r">￥{{order.pay_price}}</text>
+                  </view>
+            </view>
+
+            <view class="buy-list">
+                  <view class="buy-list-title">还有以下小伙伴正在抢购</view>
+                  <view class="buy-list-image">
+                        <block wx:for="{{buylist}}" wx:key="this">
+                              <image src="{{item.avatar}}"></image>
+                        </block>
+                  </view>
+            </view>
+            <view class="go">
+                  <button bindtap="goHome">去商城逛逛</button>
+            </view>
+      </view>
+
+
+
+
+
+
+
+
+</view>
